@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+
+  app:
+    image: rg.fr-par.scw.cloud/sirikon/gonference:latest
+    restart: always
+    environment:
+      ACME_AGREE: 'true'
+      PORT: 80
+      CUSTOM_BRAND_NAME: BilboStack
+    volumes:
+      - ./data/uploads:/app/uploads
+      - ./data/logs:/app/logs
+      - ./custom:/app/custom

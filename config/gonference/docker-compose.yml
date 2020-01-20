@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+
+  app:
+    env_file:
+      - ../../config/gonference/secrets.env
+    networks: 
+      front_internal:
+        aliases: 
+          - gonference.local
+
+networks:
+  front_internal:
+    external: true

@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+
+  caddy:
+    env_file:
+      - ../../config/front/secrets.env
+    networks: 
+      internal:
+        aliases: 
+          - front.local
+    ports:
+      - 80:80
+      - 443:443
+
+networks:
+  internal:
